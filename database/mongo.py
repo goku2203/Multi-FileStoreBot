@@ -1,6 +1,7 @@
 #@cantarellabots
 
 import motor.motor_asyncio
+import certifi  # Pudhusa add pannirukkom
 from config import MONGO_URI, MONGO_DB_NAME, LOGGER
 
 log = LOGGER(__name__)
@@ -13,7 +14,8 @@ def get_motor_client() -> motor.motor_asyncio.AsyncIOMotorClient:
     """Return the singleton Motor client, creating it if needed."""
     global _client
     if _client is None:
-        _client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URI)
+        # tlsCAFile=certifi.where() add pannirukkom
+        _client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URI, tlsCAFile=certifi.where())
         log.info("MongoDB Motor client initialized")
     return _client
 
