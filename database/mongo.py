@@ -14,8 +14,12 @@ def get_motor_client() -> motor.motor_asyncio.AsyncIOMotorClient:
     """Return the singleton Motor client, creating it if needed."""
     global _client
     if _client is None:
-        # tlsCAFile=certifi.where() add pannirukkom
-        _client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URI, tlsCAFile=certifi.where())
+        # tls=True matrum tlsAllowInvalidCertificates=True pudhusa add pannirukkom
+        _client = motor.motor_asyncio.AsyncIOMotorClient(
+            MONGO_URI, 
+            tls=True, 
+            tlsAllowInvalidCertificates=True
+        )
         log.info("MongoDB Motor client initialized")
     return _client
 
