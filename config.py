@@ -22,7 +22,7 @@ TG_BOT_TOKEN = BOT_TOKEN # Alias for backward compatibility
 OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 
 # MongoDB connection URI
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://masamin643_db_user:aqunP8EES9YndDQt@cluster0.rgnbdf5.mongodb.net/?appName=Cluster0")
+MONGO_URI = os.environ.get("MONGO_URI", "")
 MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "Cluster0")
 DB_URI = MONGO_URI    # Alias for old bot.py
 DB_NAME = MONGO_DB_NAME # Alias for old bot.py
