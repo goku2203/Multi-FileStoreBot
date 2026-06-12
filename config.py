@@ -34,7 +34,7 @@ CHANNEL_ID = 0
 MAIN_LOG_CHANNEL = int(os.environ.get("MAIN_LOG_CHANNEL", ""))
 
 # Force-subscribe channel for the main bot (username without @)
-FSUB_CHANNEL = os.environ.get("FSUB_CHANNEL", "cantarellabots") 
+FSUB_CHANNEL = os.environ.get("FSUB_CHANNEL", "") 
 
 # =============================================================================
 # ENCRYPTION — Used to secure bot tokens in the database
